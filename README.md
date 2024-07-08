@@ -1,4 +1,31 @@
 # Data-Pipeline-for-Spotify-data-analysis
+
+## Description
+This project implements a real-time data processing pipeline for Spotify track data analysis using Kafka, AWS S3, AWS Glue and AWS Athena.
+
+## Technologies used
+- Apache Kafka
+- AWS S3
+- AWS Glue
+- AWS Athena
+- AWS IAM
+- Python
+- Boto3
+
+## Installation
+1. Clone the :
+    ``bash
+    https://github.com/Gastunechi/Data-Pipeline-for-Spotify-data-analysis.git
+    ```
+2. Install required dependencies (e.g. Kafka, Boto3, etc.)
+
+## Usage
+1. Configure Kafka producers and consumers.
+2. Set up the necessary IAM roles and S3 buckets.
+3. Configure and run AWS Glue jobs.
+4. Use AWS Athena to run SQL queries on the transformed data.
+
+
 # Data Pipeline pour l'analyse de données Spotify
 
 ## Description
@@ -16,7 +43,7 @@ Ce projet met en place un pipeline de traitement de données en temps réel pour
 ## Installation
 1. Clonez le référentiel :
     ```bash
-    git clone https://github.com/yourusername/your-repository-name.git
+    https://github.com/Gastunechi/Data-Pipeline-for-Spotify-data-analysis.git
     ```
 2. Installez les dépendances requises (par exemple, Kafka, Boto3, etc.)
 
