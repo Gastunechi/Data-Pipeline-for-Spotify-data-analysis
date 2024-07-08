@@ -25,15 +25,16 @@ The repository is structured as follows:
 3. **Execute Scripts on EC2**:
    - On each EC2 instance, run the producer and consumer scripts to send and receive Kafka messages.
 
-### Kafka
-1. **Kafka configuration**:
-   - Configure and start a Kafka cluster.
+### Kafka with upstash
+1. **Configuring Kafka with upstash** :
+   - Set up and start a Kafka cluster on upstash.com.
+   - Create the corresponding topics on the cluster.
    - Make sure Kafka is accessible from your EC2 instances.
-2. **Execute Producers**:
-   - Run producer scripts on EC2 instances to send messages in the respective topics.
+2. **Run Producers**:
+   - Run the producer scripts on the EC2 instances to send messages to the respective topics.
 3. **Run Consumers**:
    - Run the consumer scripts on EC2 instances to receive and process messages in the respective topics.
-  
+     
 
 ### AWS Glue
 1. **Configure IAM Roles**:
@@ -102,9 +103,10 @@ Le repository est structuré de la manière suivante :
 3. **Exécution des Scripts sur EC2** :
    - Sur chaque instance EC2, exécutez les scripts producteurs et consommateurs pour envoyer et recevoir des messages Kafka.
 
-### Kafka
-1. **Configuration de Kafka** :
-   - Configurer et démarrer un cluster Kafka.
+### Kafka avec upstash
+1. **Configuration de Kafka avec upstash** :
+   - Configurer et démarrer un cluster Kafka sur upstash.com.
+   - Créez les topics correspondant sur le cluster.
    - Assurez-vous que Kafka est accessible depuis vos instances EC2.
 2. **Exécution des Producteurs** :
    - Exécutez les scripts producteurs sur les instances EC2 pour envoyer des messages dans les topics respectifs.
