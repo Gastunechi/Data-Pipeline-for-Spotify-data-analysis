@@ -1,16 +1,31 @@
 # Data-Pipeline-for-Spotify-data-analysis
 
-## Description
-This project implements a real-time data processing pipeline for Spotify track data analysis using Kafka, AWS S3, AWS Glue and AWS Athena.
+This project implements an ETL (Extract, Transform, Load) pipeline using Apache Kafka, AWS S3, AWS Glue, and AWS Athena.
 
-## Technologies used
-- Apache Kafka
-- AWS S3
-- AWS Glue
-- AWS Athena
-- AWS IAM
-- Python
-- Boto3
+## Repository structure
+
+The repository is structured as follows:
+### Folders
+- albums/**: Contains album data and scripts for the Kafka producer and consumer.
+- artist/**: Contains artist data and scripts for Kafka producer and consumer.
+- tracks/**: Contains track data and scripts for Kafka producer and consumer.
+
+
+### Scripts
+- **producer.py**: Script for producing Kafka messages from CSV files.
+- **consumer.py**: Script to consume Kafka messages and store them in an S3 bucket.
+
+### ETL process
+1. **Kafka producers**: Read data from CSV files and publish messages in corresponding Kafka topics (`albums`, `artist`, `tracks`).
+2. **Kafka Consumers**: Listen to messages in Kafka topics, transform them into DataFrame, and load them into CSV files in an S3 bucket.
+3. **AWS Glue**: Used to create an ETL pipeline that transforms and loads data from the S3 staging bucket into the Data Lake.
+4. **AWS Athena**: Used to query data from the Data Lake.
+
+### Execution
+1. Run the producers to publish the messages in Kafka.
+2. Run consumers to consume messages from Kafka and store them in S3.
+3. Configure AWS Glue to transform and load data into the Data Lake.
+4. Use AWS Athena to query the data in the Data Lake.
 
 ## Installation
 1. Clone the :
@@ -25,20 +40,36 @@ This project implements a real-time data processing pipeline for Spotify track d
 3. Configure and run AWS Glue jobs.
 4. Use AWS Athena to run SQL queries on the transformed data.
 
+Contributions are welcome! Please submit a pull request or open an issue to discuss what you'd like to change.
 
 # Data Pipeline pour l'analyse de données Spotify
 
-## Description
-Ce projet met en place un pipeline de traitement de données en temps réel pour l'analyse de données de pistes Spotify en utilisant Kafka, AWS S3, AWS Glue et AWS Athena.
+Ce projet implémente un pipeline ETL (Extract, Transform, Load) en utilisant Apache Kafka, AWS S3, AWS Glue, et AWS Athena.
 
-## Technologies Utilisées
-- Apache Kafka
-- AWS S3
-- AWS Glue
-- AWS Athena
-- AWS IAM
-- Python
-- Boto3
+## Structure du Repository
+
+Le repository est structuré de la manière suivante :
+### Dossiers
+- **albums/**: Contient les données des albums et les scripts pour le producteur et le consommateur Kafka.
+- **artist/**: Contient les données des artistes et les scripts pour le producteur et le consommateur Kafka.
+- **tracks/**: Contient les données des pistes (tracks) et les scripts pour le producteur et le consommateur Kafka.
+
+
+### Scripts
+- **producer.py**: Script pour produire les messages Kafka à partir des fichiers CSV.
+- **consumer.py**: Script pour consommer les messages Kafka et les stocker dans un bucket S3.
+
+### Processus ETL
+1. **Producteurs Kafka**: Lisent les données des fichiers CSV et publient les messages dans les topics Kafka correspondants (`albums`, `artist`, `tracks`).
+2. **Consommateurs Kafka**: Écoutent les messages des topics Kafka, les transforment en DataFrame, et les chargent dans des fichiers CSV dans un bucket S3.
+3. **AWS Glue**: Utilisé pour créer un pipeline ETL qui transforme et charge les données du bucket S3 staging vers le Data Lake.
+4. **AWS Athena**: Utilisé pour interroger les données du Data Lake.
+
+### Exécution
+1. Exécutez les producteurs pour publier les messages dans Kafka.
+2. Exécutez les consommateurs pour consommer les messages de Kafka et les stocker dans S3.
+3. Configurez AWS Glue pour transformer et charger les données dans le Data Lake.
+4. Utilisez AWS Athena pour interroger les données du Data Lake.
 
 ## Installation
 1. Clonez le référentiel :
@@ -47,13 +78,7 @@ Ce projet met en place un pipeline de traitement de données en temps réel pour
     ```
 2. Installez les dépendances requises (par exemple, Kafka, Boto3, etc.)
 
-## Utilisation
-1. Configurez les producteurs et consommateurs Kafka.
-2. Mettez en place les rôles IAM et les buckets S3 nécessaires.
-3. Configurez et exécutez les jobs AWS Glue.
-4. Utilisez AWS Athena pour exécuter des requêtes SQL sur les données transformées.
 
-## Contributions
 Les contributions sont les bienvenues ! Veuillez soumettre une pull request ou ouvrir une issue pour discuter de ce que vous aimeriez changer.
 
 
