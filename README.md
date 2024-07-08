@@ -15,6 +15,38 @@ The repository is structured as follows:
 - **producer.py**: Script for producing Kafka messages from CSV files.
 - **consumer.py**: Script to consume Kafka messages and store them in an S3 bucket.
 
+### Instances EC2
+1. **Launch EC2 Instances**:
+   - Create EC2 instances on AWS to host Kafka producers and consumers.
+   - Configure the instances to access Kafka and S3 buckets.
+2. **Connect to EC2 Instances**:
+   - Connect to your EC2 instances via SSH.
+   - Install the necessary dependencies (Kafka, Python, boto3, etc.).
+3. **Execute Scripts on EC2**:
+   - On each EC2 instance, run the producer and consumer scripts to send and receive Kafka messages.
+
+### Kafka
+1. **Kafka configuration**:
+   - Configure and start a Kafka cluster.
+   - Make sure Kafka is accessible from your EC2 instances.
+2. **Execute Producers**:
+   - Run producer scripts on EC2 instances to send messages in the respective topics.
+3. **Run Consumers**:
+   - Run the consumer scripts on EC2 instances to receive and process messages in the respective topics.
+  
+
+### AWS Glue
+1. **Configure IAM Roles**:
+   - Configure IAM roles to enable AWS Glue to access S3 buckets.
+2. **Create and Run Glue Jobs**:
+   - Create and run Glue jobs to transform and load data into a datalake.
+
+### AWS Athena
+1. **Crawler configuration**:
+   - Configure a Glue crawler to detect patterns in the datalake.
+2. **Query Data with Athena**:
+   - Use Athena to query the data stored in the datalake.
+
 ### ETL process
 1. **Kafka producers**: Read data from CSV files and publish messages in corresponding Kafka topics (`albums`, `artist`, `tracks`).
 2. **Kafka Consumers**: Listen to messages in Kafka topics, transform them into DataFrame, and load them into CSV files in an S3 bucket.
@@ -58,6 +90,40 @@ Le repository est structuré de la manière suivante :
 ### Scripts
 - **producer.py**: Script pour produire les messages Kafka à partir des fichiers CSV.
 - **consumer.py**: Script pour consommer les messages Kafka et les stocker dans un bucket S3.
+
+
+### Instances EC2
+1. **Lancement des Instances EC2** :
+   - Créez des instances EC2 sur AWS pour héberger les producteurs et consommateurs Kafka.
+   - Configurez les instances pour qu'elles puissent accéder à Kafka et aux buckets S3.
+2. **Connexion aux Instances EC2** :
+   - Connectez-vous à vos instances EC2 via SSH.
+   - Installez les dépendances nécessaires (Kafka, Python, boto3, etc.).
+3. **Exécution des Scripts sur EC2** :
+   - Sur chaque instance EC2, exécutez les scripts producteurs et consommateurs pour envoyer et recevoir des messages Kafka.
+
+### Kafka
+1. **Configuration de Kafka** :
+   - Configurer et démarrer un cluster Kafka.
+   - Assurez-vous que Kafka est accessible depuis vos instances EC2.
+2. **Exécution des Producteurs** :
+   - Exécutez les scripts producteurs sur les instances EC2 pour envoyer des messages dans les topics respectifs.
+3. **Exécution des Consommateurs** :
+   - Exécutez les scripts consommateurs sur les instances EC2 pour recevoir et traiter les messages des topics respectifs.
+  
+
+### AWS Glue
+1. **Configuration des Rôles IAM** :
+   - Configurer des rôles IAM pour permettre à AWS Glue d'accéder aux buckets S3.
+2. **Création et Exécution de Jobs Glue** :
+   - Créez et exécutez des jobs Glue pour transformer et charger les données dans un datalake.
+     
+### AWS Athena
+1. **Configuration du Crawler** :
+   - Configurez un crawler Glue pour détecter les schémas dans le datalake.
+2. **Requête des Données avec Athena** :
+   - Utilisez Athena pour interroger les données stockées dans le datalake.
+
 
 ### Processus ETL
 1. **Producteurs Kafka**: Lisent les données des fichiers CSV et publient les messages dans les topics Kafka correspondants (`albums`, `artist`, `tracks`).
